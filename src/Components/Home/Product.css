@@ -9,9 +9,15 @@
   max-height: 400px;
   min-width: 100px;
   background-color: white;
+  /* border-bottom-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px; */
   z-index: 1;
 }
-
+.product:hover {
+  background-color: lightgrey;
+}
 .product > img {
   max-height: 200px;
   width: 100%;
@@ -39,4 +45,8 @@
 
 .product__rating {
   display: flex;
+}
+
+.product > button:hover {
+  cursor: pointer;
 }

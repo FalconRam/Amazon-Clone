@@ -1,7 +1,14 @@
 .checkoutProduct {
   display: flex;
+
   margin-top: 20px;
   margin-bottom: 20px;
+
+  padding-left: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-top-left-radius: 15px;
+  border-bottom-right-radius: 25px;
 }
 
 .checkoutProduct__info {
@@ -18,9 +25,9 @@
 }
 
 .checkoutProduct__image {
-    object-fit: contain;
-    width: 180px;
-    height: 180px;
+  object-fit: contain;
+  width: 180px;
+  height: 180px;
 }
 
 .checkoutProduct__rating {
@@ -28,7 +35,7 @@
 }
 
 .checkoutProduct__title {
-    object-fit: contain;
-    font: 17px;
-    font-weight: 800;
+  object-fit: contain;
+  font: 17px;
+  font-weight: 800;
 }

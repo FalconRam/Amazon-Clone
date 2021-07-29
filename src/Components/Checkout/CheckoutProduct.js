@@ -2,6 +2,7 @@ import React from "react";
 import { useStateValue } from "../Reducer/StateProvider";
 import "./CheckoutProduct.css";
 
+
 function CheckoutProduct({ id, title, image, price, rating }) {
   const [{ cart }, dispatch] = useStateValue();
 
@@ -29,7 +30,7 @@ function CheckoutProduct({ id, title, image, price, rating }) {
         </div>
         <button onClick={removeFromCart}>Remove from Cart</button>
       </div>
-    </div>
+      </div>
   );
 }
 
