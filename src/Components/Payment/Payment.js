@@ -7,7 +7,7 @@ import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import CurrencyFormat from "react-currency-format";
 import { getCartTotal } from "../Reducer/reducer";
 import { useHistory } from "react-router-dom";
-import axios from "axios";
+import axios from 'axios';
 
 function Payment() {
   const [{ cart, user }, dispatch] = useStateValue();
@@ -26,13 +26,15 @@ function Payment() {
       const response = await axios({
         method: "post",
         // stripe expects total in a currencies subunits
-        url: "/payment/create?total=${getCartTotal(cart) * 100}",
+        url: `/payments/create?total=${getCartTotal(cart) * 100}`,
       });
       getClientSecret(response.data.clientSecret);
     };
     getClientSecret();
   }, [cart]);
 
+  console.log("The Secret is ==>", clientSecret);
+  console.log("👱", user);
   const handleSubmit = async (event) => {
     event.preventDefault();
     setProcessing(true);
@@ -108,7 +110,7 @@ function Payment() {
                   value={getCartTotal(cart)}
                   displayType={"text"}
                   thousandSeparator={true}
-                  prefix={"$"}
+                  prefix={"₹"}
                 />
                 <button disabled={processing || disabled || succeeded}>
                   <span>{processing ? <p>Processing</p> : "Buy Now"}</span>
