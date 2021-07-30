@@ -4,7 +4,7 @@ const express = require("express");
 const cors = require("cors");
 
 const stripe = require("stripe")(
-  "sk_test_51JIXVXSCidyQV0EsfvW4bC1NijUP2itJB3izo1eywOXCpXxq9GnBBi5zZwUC7zuz64acbDMc47IZ2ipevio4Yk7N00yyPbGQgT"
+  'sk_test_51JIXVXSCidyQV0EsfvW4bC1NijUP2itJB3izo1eywOXCpXxq9GnBBi5zZwUC7zuz64acbDMc47IZ2ipevio4Yk7N00yyPbGQgT'
 );
 
 // API
@@ -37,4 +37,6 @@ app.post("/payments/create", async (request, response) => {
 
 // - Listen command
 exports.api = functions.https.onRequest(app);
+
+
 // http://localhost:5001/challenge-518a5/us-central1/api

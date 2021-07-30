@@ -7,19 +7,19 @@ import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import CurrencyFormat from "react-currency-format";
 import { getCartTotal } from "../Reducer/reducer";
 import { useHistory } from "react-router-dom";
-import axios from 'axios';
+import axios from "../../axios";
 
 function Payment() {
   const [{ cart, user }, dispatch] = useStateValue();
   const history = useHistory();
   const stripe = useStripe();
   const elements = useElements();
-  const [processing, setProcessing] = useState(true);
-  const [succeeded, setSucceeded] = useState(true);
+
+  const [succeeded, setSucceeded] = useState(false);
+  const [processing, setProcessing] = useState("");
   const [error, setError] = useState(null);
   const [disabled, setDisabled] = useState(true);
   const [clientSecret, setClientSecret] = useState(true);
-
   useEffect(() => {
     // generate the spl stripe secret which allows us to charge a customer
     const getClientSecret = async () => {
@@ -35,6 +35,7 @@ function Payment() {
 
   console.log("The Secret is ==>", clientSecret);
   console.log("👱", user);
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     setProcessing(true);
@@ -101,6 +102,7 @@ function Payment() {
           </div>
           <div className="payment__details">
             <form onSubmit={handleSubmit}>
+              <h4>Card Details</h4>
               <CardElement onChange={handleChange} />
 
               <div className="payment__priceContainer">
