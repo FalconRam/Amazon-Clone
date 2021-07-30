@@ -21,9 +21,9 @@
   align-items: center;
   border-radius: 24px;
 }
+
 .header__searchInput {
   height: 12px;
-  flex: 1;
   padding: 10px;
   border: none;
   width: 100%;
@@ -44,13 +44,13 @@
   font-weight: 800;
 }
 
-.header__optionCart {
+.header__optionBasket {
   display: flex;
   align-items: center;
   color: white;
 }
 
-.header__cartCount {
+.header__basketCount {
   margin-left: 10px;
   margin-right: 10px;
 }
